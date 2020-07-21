@@ -1,5 +1,6 @@
 var stopTraining
 
+// Obtenemos la data que esta alojada en github
 async function getData() {
     const datosCasasR = await fetch('https://gonzalomardones.github.io/ModeloRegresion/datos.json')
     const datosCasas = await datosCasasR.json()
@@ -15,7 +16,7 @@ async function getData() {
     return datosLimpios
 }
 
-//mostrar curva de inferencia
+// Mostramos curva de inferencia
 async function verCurvaInferencia(){
     var data = await getData()
     var tensorData = await convertirDatosATensores(data)
@@ -28,9 +29,10 @@ async function verCurvaInferencia(){
         const desnormX = xs.mul(entradasMax.sub(entradasMin)).add(entradasMin)
         const desnormY = preds.mul(etiquetasMax.sub(etiquetasMin)).add(etiquetasMin)
 
-        //Un-normalize the data
+        // Desnormalizamos los datos
         return [desnormX.dataSync(), desnormY.dataSync()]
     })
+
 
     const puntosPrediccion = Array.from(xs).map((val, i) => {
         return {x: val, y: preds[i]}
@@ -52,6 +54,7 @@ async function verCurvaInferencia(){
     )
 }
 
+// Cargamos modelo de archivos Json y Bin
 async function cargarModelo(){
     const uploadJSONInput = document.getElementById('upload-json')
     const uploadWeightsInput  = document.getElementById('upload-weights')
@@ -95,7 +98,7 @@ const funcion_perdida = tf.losses.meanSquaredError
 const metricas = ['mse']
 
 async function entrenarModelo(model, inputs, labels){
-    // Prepare the model for training.
+    // Preparamos el entrenamiento del modelo
     model.compile({
         optimizer: optimizador,
         loss: funcion_perdida,
@@ -124,6 +127,7 @@ async function entrenarModelo(model, inputs, labels){
     })
 }
 
+// De los archivos que tengo en el archivo necesito convertirlos a tensores ponerlos a un formato que TFJs los reconozca
 function convertirDatosATensores(data){
     return tf.tidy( () => {
         tf.util.shuffle(data)
@@ -154,13 +158,13 @@ function convertirDatosATensores(data){
     })
 }
 
-//Almacenar el modelo
+// Almacenar el modelo
 async function guardarModelo(){
     const saveResult = await modelo.save('downloads://modelo-regresion')
 }
 
 var modelo
-//De los archivos que tengo en el archivo necesito convertirlos a tensores ponerlos a un formato que TFJs los reconozca
+// De los archivos que tengo en el archivo necesito convertirlos a tensores ponerlos a un formato que TFJs los reconozca
 async function run(){
     const data = await getData()
 
@@ -173,7 +177,7 @@ async function run(){
     await entrenarModelo(modelo, entradas, etiquetas)
 
 }
-//Almacenar el modelo
+//Ejecutamos el programa y modelo
 function ejecutarModelo(){
     run()
 }
