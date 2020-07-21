@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+    <title>TensorflowJS - Modelo de Regresión</title>
+    <!-- Importar TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.7.4/dist/tf.min.js"></script>
+    <!-- Importar tfjs-vis  Visualizacion-->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@1.0.2/dist/tfjs-vis.umd.min.js"></script>
+
+</head>
+<body>
+    <section class="section_carga"> 
+        <h2>Ejecutar Modelo</h2>
+
+        <p>Se desplegará una ventana con el modelo y entrenamiento de este <br>
+        El entrenamiento cuenta con 50 etapas para un modelo de regresión lineal</p>
+        <input type="button" class="button_archivo" value="Ejecutar Modelo" onclick="ejecutarModelo()"/>
+ 
+        <p>Visualizar curva de inferencia </p>
+        <input type="button" class="button" value="Curva de inferencia" onclick="verCurvaInferencia()"/><br>        
+    </section>
+
+    <section class="section_gray">
+        <h2>Cargar Modelo</h2>
+
+        <p>Para usar esta opción es necesario cargar el archivo .json correspondiente a la <br> composición del modelo y el
+            archivo binario correspondiente a los pesos de este
+         </p>
+
+        <p>Archivo Json</p>
+        <span class="btn btn-default btn-file">
+            Seleccionar Archivo <input type="file" id="upload-json">
+        </span>
+        <br>        
+        
+        <p>Archivo Binario </p>
+        <span class="btn btn-default btn-file">
+            Seleccionar Archivo <input type="file" id="upload-weights">
+        </span>
+        <br>
+
+        <input type="button" class="button" value="Cargar Modelo" onclick="cargarModelo()"/><br>
+    </section>
+    <section class="section_white">
+        <h2>Detener Modelo</h2>
+
+        <p>Es posible detener el entrenamiento del modelo, utilizar esta composición <br> 
+            y pesos generados para nuestros análisis
+         </p>
+
+        <input type="button" class="button_archivo" value="Detener Entrenamiento" onclick="stopTraining=true"><br>
+
+        <p> Descargar composición y pesos del modelod de regresión</p>
+        <input type="button" class="button" value="Guardar modelo" onclick="guardarModelo()"/><br>
+
+        <p> Autor: Gonzalo Mardones, email: gonzalo-a@hotmail.com</p>        
+    </section>
+    <br>
+    <script src="script.js"></script>  
+    <script type="text/javascript" src="datos.json"></script>
+</body>
+</html>

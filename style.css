@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    font-family: 'Muli', sans-serif;
+  }
+  .btn-file {
+    background: #006a71;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Rubik', sans-serif;
+    font-size: inherit;
+    font-weight: 500;
+    outline: none;
+    padding: 0.5rem 10px;
+    position: relative;
+    transition: all 0.3s;
+    vertical-align: middle;
+    }
+
+
+  .btn-file input[type=file] {
+      position: absolute;
+      top: 0;
+      right: 0;
+      min-width: 100%;
+      min-height: 100%;
+      font-size: 100px;
+      text-align: right;
+      filter: alpha(opacity=0);
+      opacity: 0;
+      outline: none;
+      background: rgb(48, 14, 14);
+      background-color:chocolate ;
+      cursor: inherit;
+      display: block;
+  }
+
+
+  [type="file"] {
+    height: 100;
+    overflow: hidden;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Rubik', sans-serif;
+    font-size: inherit;
+    font-weight: 500;
+    outline: none;
+    padding: 0.5rem 10px;
+    position: relative;
+    transition: all 0.3s;
+    vertical-align: middle;
+    background-color: red;
+    width: 100;
+  }
+  
+
+  .section_white{
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    color: var(--black);
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 45vh;
+  }
+  .section_gray{
+    align-items: center;
+    padding:10px;
+    background-color: rgb(231, 231, 231);
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 55vh;
+  }
+  .section_carga{
+    align-items: center;
+    padding:10px;
+    background-color: white;
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 40vh;
+  }    
+
+
+  .button {
+    background: #f0a500;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Rubik', sans-serif;
+    font-size: inherit;
+    font-weight: 500;
+    outline: none;
+    padding: 0.5rem 10px;
+    position: relative;
+    transition: all 0.3s;
+    vertical-align: middle;
+  }
+
+  .button_archivo {
+    background: #e84a5f;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Rubik', sans-serif;
+    font-size: inherit;
+    font-weight: 500;
+    outline: none;
+    padding: 0.5rem 10px;
+    position: relative;
+    transition: all 0.3s;
+    vertical-align: middle;
+  }
